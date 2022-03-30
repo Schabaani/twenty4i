@@ -4,10 +4,10 @@ export type InitStackParamList = {
   AppNavigator: undefined;
 };
 
-export const RootStackRouteNames = ['SecondaryScreen', 'PrimaryScreen'];
+export const RootStackRouteNames = ['HomeScreen', 'DetailScreen'];
 
 export type RootStackParamList = {
   About: undefined;
-  PrimaryScreen: undefined;
-  SecondaryScreen: {id: number; color: string; name: string};
+  HomeScreen: undefined;
+  DetailScreen: {title: string; posterUrl: string; plot: string};
 };

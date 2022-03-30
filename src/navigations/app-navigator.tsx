@@ -4,8 +4,8 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-community/async-storage';
 import useTheme from '../utils/useTheme';
 
-import PrimaryScreen from '../scenes/primary';
-import SecondaryScreen from '../scenes/secondary';
+import HomeScreen from '../scenes/home';
+import DetailScreen from '../scenes/detail';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,8 +21,8 @@ const AppStack = () => {
 
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="PrimaryScreen" component={PrimaryScreen} />
-      <Stack.Screen name="SecondaryScreen" component={SecondaryScreen} />
+      <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="DetailScreen" component={DetailScreen} />
     </Stack.Navigator>
   );
 };
