@@ -7,7 +7,6 @@ export type InitStackParamList = {
 export const RootStackRouteNames = ['HomeScreen', 'DetailScreen'];
 
 export type RootStackParamList = {
-  About: undefined;
   HomeScreen: undefined;
   DetailScreen: {title: string; posterUrl: string; plot: string};
 };

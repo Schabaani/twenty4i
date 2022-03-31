@@ -3,13 +3,11 @@ import {
   NavigationContainer,
   NavigationContainerRef,
 } from '@react-navigation/native';
-import {ThemeContext} from '../utils/useTheme';
 import AppNavigator from './app-navigator';
 
 export default function AppNavigation() {
   const navigationRef = useRef<NavigationContainerRef<any>>(null);
   const routeNameRef = useRef<string | undefined>();
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
 
   const onReady = () => {
     routeNameRef.current = navigationRef.current?.getCurrentRoute()?.name;
@@ -30,13 +28,11 @@ export default function AppNavigation() {
   };
 
   return (
-    <ThemeContext.Provider value={{theme, setTheme}}>
-      <NavigationContainer
-        ref={navigationRef}
-        onReady={onReady}
-        onStateChange={onStateChange}>
-        <AppNavigator />
-      </NavigationContainer>
-    </ThemeContext.Provider>
+    <NavigationContainer
+      ref={navigationRef}
+      onReady={onReady}
+      onStateChange={onStateChange}>
+      <AppNavigator />
+    </NavigationContainer>
   );
 }
